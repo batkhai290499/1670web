@@ -15,33 +15,26 @@ if(!$con){
 	if(mysqli_num_rows($sql) > 0){
 
 		$row = mysqli_fetch_array($sql, MYSQLI_ASSOC );
-		echo "<p>ỉn a tat ca" .$row['username'].'cua nguoi dung</p>';
-		echo "<p>ỉn a tat ca" .$row['password'].'cua nguoi dung</p>';
-		$_SESSION['currUser'] = $row['username'];
-		echo "<p>ỉn a tat ca" .$_SESSION['currUser'].'cua nguoi dung</p>';
-		echo "<p>ỉn a tat ca" .$row['roleID'].'cua nguoi dung</p>';
  		if ($row['roleID'] == 1) {
+			$_SESSION['currStudent'] = $row['username'];
  			$_SESSION['currAdmin'] = $row['roleID'];
+ 			$_SESSION['currTeacher'] = $row['roleID'];
  			$_SESSION['accID'] = $row['accountID'];
- 			echo "<p>ỉn a tat ca" .$_SESSION['currAdmin'].'cua nguoi dung</p>';
  			header("location:./admin.php");
  		} 
  		else if($row['roleID'] == 2){
+			$_SESSION['currStudent'] = $row['username'];
  			$_SESSION['accID'] = $row['accountID'];
- 			$_SESSION['currAdmin'] = $row['roleID'];
- 			echo "<p>ỉn a tat ca" .$_SESSION['currAdmin'].'cua nguoi dung</p>';
+ 			$_SESSION['currTeacher'] = $row['roleID'];
  			header("location:teacher.php");
-// 			header("location:index.php");
  		}
  		else if($row['roleID'] == 3){
  			$_SESSION['accID'] = $row['accountID'];
- 			$_SESSION['currAdmin'] = $row['roleID'];
- 			echo "<p>ỉn a tat ca" .$_SESSION['currAdmin'].'cua nguoi dung</p>';
+ 			$_SESSION['currStudent'] = $row['roleID'];
  			header("location:./StudentCourseManagement.php");
-// 			header("location:index.php");
  		}
 	} else{
-		echo "<script> alert('ten dang nhap khong dung')</script>";
+		echo "<script> alert('Please log in again')</script>";
 	}
 }
 
