@@ -209,17 +209,7 @@ a:link {
     <div class="w3-twothird w3-container">
       <h1 class="w3-text-teal">Your Course</h1>
        <?php
-        $hostname='localhost';
-        $username = 'root';
-        $password = '';
-        $dbname = 'webofgroup';
-
-        // Create connection
-        $conn = mysqli_connect($hostname, $username, $password, $dbname);
-        // Check connection
-        if (!$conn) {
-            die("Connection failed: " . mysqli_connect_error());
-        }
+        require_once './database.php';
         $sql = "SELECT * FROM course join account_course_detail on course.courseID = account_course_detail.courseID where accountID = '".$_SESSION['accID']."'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {

@@ -206,18 +206,7 @@ a:link {
     <div class="w3-twothird w3-container">
     <h1 class="w3-text-teal">Your Activity</h1>
     <?php
-      $hostname='localhost';
-      $username = 'root';
-      $password = '';
-      $dbname = 'webofgroup';
-
-      // Create connection
-      $conn = mysqli_connect($hostname, $username, $password, $dbname);
-      // Check connection
-      if (!$conn) {
-          die("Connection failed: " . mysqli_connect_error());
-      }
-
+      require_once './database.php';
       $courseID = $_GET['courseID'];
       $sql = "SELECT * FROM activity where courseID=".$courseID."";
       $result = $conn->query($sql);
