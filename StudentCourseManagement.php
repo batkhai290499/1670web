@@ -1,12 +1,10 @@
 <?php 
  require("session.php");
- if (!isset($_SESSION['currUser'])) {
+ if (!isset($_SESSION['currStudent'])) {
     header("location:login.php");
  }
  else{
-     if(!isset($_SESSION['currAdmin'])){
-        header("location:index.php");
-     } 
+     
  }
 ?>
 <!DOCTYPE html>

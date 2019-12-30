@@ -1,7 +1,7 @@
 <?php 
  require("session.php");
 
- if (!isset($_SESSION['currUser'])) {
+ if (!isset($_SESSION['currStudent'])) {
   header("location:login.php");
  }
  else{
