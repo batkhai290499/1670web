@@ -159,7 +159,6 @@ img {vertical-align: middle;}
   <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
     <a href="admin.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Home</a>
-    <a href="Course.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Course</a>
     <a href="Logout.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white" >Logout</a>
   </div>
 
@@ -179,7 +178,7 @@ img {vertical-align: middle;}
                 <th class="column2">Password</th>
                 <th class="column3">Role</th>
                 <th class="column4">Full Name</th>
-                <th class="column4">Place</th>
+                <th class="column4">Age</th>
                 <th></th>
                 <th></th>
               </tr>
