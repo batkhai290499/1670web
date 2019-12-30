@@ -156,7 +156,7 @@ img {vertical-align: middle;}
                                 <td><input type="text" name ="aName" size="100%"></td>
               </tr>
               <tr>
-                                <th>Place</th>
+                                <th>Age</th>
                                 <td><input type="text" name ="aAge" size="100%"></td>
               </tr>
                             <tr>
