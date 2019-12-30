@@ -162,7 +162,7 @@ img {vertical-align: middle;}
                                         <tr>
                                             <th class="column1"> <?= $rows[$i][1] ?> </th>
                                             <th class="column2"> <a href="viewactivity.php?id=<?= $rows[$i][0] ?>">Detail</a></th>
-                                            <th class="column2"> <a href="functiondelete.php?id=<?= $rows[$i][0] ?>">Delete</a></th>
+                                            <th class="column2"> <a href="functiondeletecourse.php?id=<?= $rows[$i][0] ?>">Delete</a></th>
                                             <th class="column2"> <a href="editcourse.php?id=<?= $rows[$i][0] ?>">Edit</a></th>
                                         </tr>
                                     </div>

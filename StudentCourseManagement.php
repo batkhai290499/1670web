@@ -4,9 +4,7 @@
   header("location:login.php");
  }
  else{
- if(!isset($_SESSION['currTeacher'])){
-  header("location:login.php");
- } 
+ 
 }
  ?>
 <!DOCTYPE html>
@@ -148,9 +146,7 @@ a:link {
 <div class="topnav">
   <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-    <a href="Main.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Home</a>
-    <a href="StudentCourseManagement.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Course</a>
-    <a href="category.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Category</a>
+    <a href="StudentCourseManagement.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Home</a>
     <a href="login.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Logout</a>
 
     <div class="search-container">

@@ -143,7 +143,7 @@ img {vertical-align: middle;}
 
                             <tr>
                                 <td>CategoryID</td>
-                                <td><input type="text" name ="CategoryID"></td>
+                                <td><input type="text" name ="categoryID"></td>
                             </tr>
 
                             <tr>
@@ -186,7 +186,7 @@ img {vertical-align: middle;}
                             $sql = "INSERT INTO course(courseID,CategoryID,courseName) VALUES('$id', '$cat', '$courseName')";
                             echo $sql;
                             mysqli_query($connect,$sql);
-                            header("Location: teacher.php");
+                            header("location:teacher.php");
                           }
                         }
                     }
