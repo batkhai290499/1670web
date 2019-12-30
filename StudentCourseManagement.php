@@ -3,6 +3,11 @@
  if (!isset($_SESSION['currUser'])) {
     header("location:login.php");
  }
+ else{
+     if(!isset($_SESSION['currAdmin'])){
+        header("location:index.php");
+     } 
+ }
 ?>
 <!DOCTYPE html>
 <html lang="en">
