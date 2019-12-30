@@ -1,6 +1,5 @@
 <?php 
  require("session.php");
-
  if (!isset($_SESSION['currStudent'])) {
   header("location:login.php");
  }
