@@ -1,12 +1,14 @@
 <?php 
  require("session.php");
  if (!isset($_SESSION['currStudent'])) {
-    header("location:login.php");
+  header("location:login.php");
  }
  else{
-     
- }
-?>
+ if(!isset($_SESSION['currTeacher'])){
+  header("location:login.php");
+ } 
+}
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <title>Student's Course Management</title>
