@@ -21,6 +21,7 @@ if(!$con){
  			$_SESSION['currTeacher'] = $row['roleID'];
  			$_SESSION['accID'] = $row['accountID'];
  			header("location:admin.php");
+
  		} 
  		else if($row['roleID'] == 2){
 			$_SESSION['currStudent'] = $row['username'];
@@ -31,7 +32,9 @@ if(!$con){
  		else if($row['roleID'] == 3){
  			$_SESSION['accID'] = $row['accountID'];
  			$_SESSION['currStudent'] = $row['roleID'];
+
  			header("location:StudentCourseManagement.php");
+
  		}
 	} else{
 		echo "<script> alert('Please log in again')</script>";
