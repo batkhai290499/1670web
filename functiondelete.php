@@ -11,6 +11,7 @@
 		$sql = "DELETE FROM account WHERE accountID=" . $id;
 		 //fucking awesome !!! I can't do it :v
 		mysqli_query($connect,$sql);
+		echo "<script> alert('Delete successful')</script>";
 		header("Location: admin.php ");
 	}
 ?>

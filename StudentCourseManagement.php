@@ -4,9 +4,7 @@
   header("location:login.php");
  }
  else{
- if(!isset($_SESSION['currTeacher'])){
-  header("location:login.php");
- } 
+ 
 }
  ?>
 <!DOCTYPE html>
@@ -19,8 +17,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <style>
   * {box-sizing: border-box;}
 
@@ -130,6 +130,14 @@ a:link {
   vertical-align: bottom; 
 }
 
+img.image-block {
+  transition: 0.3s;
+}
+
+.image-block:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .content-des {
   padding: 10px;
   position: absolute;
@@ -148,9 +156,7 @@ a:link {
 <div class="topnav">
   <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-    <a href="Main.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Home</a>
-    <a href="StudentCourseManagement.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Course</a>
-    <a href="category.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Category</a>
+    <a href="StudentCourseManagement.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Home</a>
     <a href="login.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Logout</a>
 
     <div class="search-container">
@@ -214,18 +220,25 @@ a:link {
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             // output data of each row
+            $count = 0;
             while($row = $result->fetch_assoc()) {
+                $count++;
                 ?>
-              <div class="image-block" action="StudentCourseManagement.php">
+              <div class="image-block " action="StudentCourseManagement.php">
                 <a href="./activity.php?courseID=<?php echo $row["courseID"]?>">
                   <img src= "./images/studentclass.jpg" style="width: 200px; height: 250px;" >
                   <span class="content-des"><b><?php echo $row["courseName"]?></b></span>
                 </a><br>
               </div>
+
+             
         <?php
             }
         }
       ?>
+      <div>
+         <?php echo "Your course:".$count ?>
+      </div>
   </div>
 <!-- END MAIN -->
 </div>
@@ -254,6 +267,9 @@ function w3_close() {
   overlayBg.style.display = "none";
 }
 </script>
+<script>
+  AOS.init();
+</script> 
 
 </body>
 </html>

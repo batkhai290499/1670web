@@ -7,7 +7,19 @@
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+  <script type="text/javascript" >
+    function validateForm() {
+  var x = document.forms["myForm"]["fname"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+}
+  </script>
+</head>
 <style>
+
 
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 .w3-sidebar {
@@ -138,26 +150,26 @@ img {vertical-align: middle;}
 
                             <tr>
                                 <th>Account</th>
-                                <td><input type="text" name ="username" size="100%"></td>
+                                <td><input type="text" name ="username" size="100%" data-validate = "Enter Username"></td>
                             </tr>
 
                             <tr>
                                 <th>Password</th>
-                                <td><input type="text" name ="password" size="100%"></td>
+                                <td><input type="text" name ="password" size="100%" data-validate = "Enter Password"></td>
                             </tr>
 
                             <tr>
                                 <th>Role</th>
-                                <td><input type="text" name ="roleID" size="100%"></td>
+                                <td><input type="text" name ="roleID" size="100%" data-validate = "Enter Role"></td>
                             </tr>
               
               <tr>
                                 <th>Full Name</th>
-                                <td><input type="text" name ="aName" size="100%"></td>
+                                <td><input type="text" name ="aName" size="100%" data-validate = "Enter Full name"></td>
               </tr>
               <tr>
-                                <th>Place</th>
-                                <td><input type="text" name ="aAge" size="100%"></td>
+                                <th>Age</th>
+                                <td><input type="text" name ="aAge" size="100%" data-validate = "Enter Age"></td>
               </tr>
                             <tr>
                                 <td></td>
@@ -180,11 +192,27 @@ img {vertical-align: middle;}
                   $aName = $_POST["aName"];
                   $age = $_POST["aAge"];
 
-                  if ($user ==""||$password == ""|| $roleID == ""||  $aName == "" || $age == "") 
+                  if ($user =="")                               //||$password == ""|| $roleID == ""||  $aName == "" || $age == "") 
                     {
-                      echo "Please fill the blank!";
+                      echo "Please enter username!";
                     }
-                  else
+                  else if ($password == "")  
+                  {
+                    echo "Please enter password";
+                  }
+                  else if ($roleID == "")
+                  {
+                    echo "Please enter role";
+                  }
+                  else if($aName == "")
+                  {
+                    echo "Please enter Full name";
+                  }
+                  else if($age == "")
+                  {
+                    echo "Please enter age";
+                  }
+                  else 
                     {
                       $sql = "select * from account where username= '$user'";
                       $query = mysqli_query($connect, $sql);

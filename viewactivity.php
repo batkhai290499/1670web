@@ -8,6 +8,28 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+  #customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
 
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 .w3-sidebar {
@@ -134,7 +156,7 @@ img {vertical-align: middle;}
         <h2 data-aos="fade-left">LIST Activity</h2>
         <h3><a href="addteacher.php">Click to Add Activity</a></h3>
                 <h3></h3>
-          <table>
+          <table id="customers">
             <thead>
               <tr class="table100-head">
                 <th class="column1">Name Activity</th>
@@ -161,10 +183,10 @@ img {vertical-align: middle;}
                                     ?>
                                     <div>
                                         <tr>
-                                            <th class="column1"> <?= $rows[$i][1] ?> </th>
-                                            <th class="column2"> <?= $rows[$i][2] ?> </th>
-                                            <th class="column3"> <?= $rows[$i][4] ?> </th>
-                                            <th class="column4"><a href="viewstudent.php?id=<?= $rows[$i][0] ?> ">Click to View</a></th>
+                                            <td class="column1"> <?= $rows[$i][1] ?> </td>
+                                            <td class="column2"> <?= $rows[$i][2] ?> </td>
+                                            <td class="column3"> <?= $rows[$i][4] ?> </td>
+                                            <td class="column4"><a href="viewstudent.php?id=<?= $rows[$i][0] ?> ">Click to View</a></td>
                                         </tr>
                                     </div>
                             <?php 

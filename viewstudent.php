@@ -8,7 +8,28 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
 
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 .w3-sidebar {
   z-index: 3;
@@ -133,12 +154,12 @@ img {vertical-align: middle;}
         <div class="table100">
         <h2 data-aos="fade-left">LIST Student</h2>
         <h3><a href="viewstudent.php">Click to Add Account Student</a></h3>
-          <table>
+          <table id="customers">
             <thead>
               <tr class="table100-head">
                 <th class="column1">Username</th>
                                 <th class="column2">Password</th>
-                                <th class="column4">Description</th>
+                                <th class="column4">Full Name</th>
                                 <th class="column5">Edit</th>
                                 <th class="column6">Delete</th>
               </tr>
@@ -161,11 +182,11 @@ img {vertical-align: middle;}
                                     ?>
                                     <div>
                                         <tr>
-                                            <th class="column1"> <?= $rows[$i][1] ?> </th>
-                                            <th class="column2"> <?= $rows[$i][2] ?> </th>
-                                            <th class="column4"> <?= $rows[$i][4] ?> </th>
-                                            <th class="column5"><a href="editteacher.php">Edit</a></th>
-                                            <th class="column6"><a href="functiondelete.php?id=<?= $rows[$i][0] ?>" name="delete">Delete</a></th>
+                                            <td class="column1"> <?= $rows[$i][1] ?> </td>
+                                            <td class="column2"> <?= $rows[$i][2] ?> </td>
+                                            <td class="column4"> <?= $rows[$i][4] ?> </td>
+                                            <td class="column5"><a href="editteacher.php">Edit</a></td>
+                                            <td class="column6"><a href="functiondelete.php?id=<?= $rows[$i][0] ?>" name="delete">Delete</a></td>
                                         </tr>
                                     </div>
                             <?php 

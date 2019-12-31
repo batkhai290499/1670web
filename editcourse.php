@@ -177,7 +177,7 @@ img {vertical-align: middle;}
                               $sql = "select * from account where username= '$user'";
                               $sql = "UPDATE course SET courseID='$id',courseName='$user',categoryID='$password' WHERE courseID=" . $id;
                               mysqli_query($connect,$sql);
-                              header("Location: teacher.php ");
+                              header("location: teacher.php ");
                             }
                         }
                     ?>
