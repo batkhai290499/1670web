@@ -169,7 +169,11 @@ img {vertical-align: middle;}
               </tr>
               <tr>
                                 <th>Age</th>
+
+
                                 <td><input type="text" name ="aAge" size="100%" data-validate = "Enter Age"></td>
+
+
               </tr>
                             <tr>
                                 <td></td>
