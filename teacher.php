@@ -21,6 +21,28 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+  #customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
 
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 .w3-sidebar {
@@ -145,13 +167,13 @@ img {vertical-align: middle;}
   <div class="limiter">
     <div class="container-table100">
       <div class="wrap-table100">
-        <div class="table100">
+        <div class="table100" style="margin-top: 5%;">
         <h2 data-aos="fade-left">LIST Category</h2>
-          <table>
+          <table id="customers">
             <thead>
               <tr class="table100-head">
                 <th class="column1">Category</th>
-                                <th class="column2">Detail</th>
+                                <th class="column2"></th>
               </tr>
             </thead>
             <?php  
@@ -163,8 +185,8 @@ img {vertical-align: middle;}
                                     ?>
                                     <div>
                                         <tr>
-                                            <th class="column1"> <?= $rows[$i][1] ?> </th>
-                                            <th class="column2"> <a href="viewcourse.php?id=<?= $rows[$i][0] ?>">Detail</a> </th>
+                                            <td class="column1"> <?= $rows[$i][1] ?> </td>
+                                            <td class="column2"> <a href="viewcourse.php?id=<?= $rows[$i][0] ?>">Detail</a> </td>
                                         </tr>
                                     </div>
                             <?php 

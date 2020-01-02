@@ -179,7 +179,7 @@ img {vertical-align: middle;}
                 <th class="column2">Password</th>
                 <th class="column3">Role</th>
                 <th class="column4">Full Name</th>
-                <th class="column4">Place</th>
+                <th class="column4">Age</th>
                 <th></th>
                 <th></th>
               </tr>
@@ -201,10 +201,23 @@ img {vertical-align: middle;}
                                                 </td>  
                                                 <td class="column4"><?= $rows[$i][5] ?></td>
                                                 <td class="column5"><a href="editteacher.php">Edit</a></td>
-                                                <td class="column6"><a href="functiondelete.php?id=<?= $rows[$i][0] ?>" name="delete">Delete</a></td>
+                                                <td class="column6"><a href="functiondelete.php?id=<?= $rows[$i][0] ?>" name="delete" onclick="return confirm('Arre you sure?')">Delete</a></td>
                                                 <div class="clear-both"></div>  
                                             </tr>
+                                            
                                     </div>
+                                    <script>
+function myFunction() {
+  var txt;
+  var r = confirm("Press a button!");
+  if (r == true) {
+    txt = "You pressed OK!";
+  } else {
+    txt = "You pressed Cancel!";
+  }
+  document.getElementById("demo").innerHTML = txt;
+}
+</script>
                             <?php 
                              }
                         ?>

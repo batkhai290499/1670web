@@ -4,9 +4,7 @@
   header("location:login.php");
  }
  else{
- if(!isset($_SESSION['currTeacher'])){
-  header("location:login.php");
- } 
+ 
 }
  ?>
 <!DOCTYPE html>
